@@ -8,6 +8,8 @@ class SpeechManager {
     
     public func play(text: String) {
         let utterance = AVSpeechUtterance(string: text)
-        synthesizer.speak(utterance)
+        let voice = AVSpeechSynthesisVoice(language: "ja-JP")
+        utterance.voice = voice
+        self.synthesizer.speak(utterance)
     }
 }
